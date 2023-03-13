@@ -27,11 +27,6 @@ print = functools.partial(print, flush=True)
 
 PRINT_PER_ITER = 100
 
-DATASET_DIRS = {
-    "food-101"       : "dataset/food-101",
-    "speech_commands": "dataset/speech_commands"
-}
-
 DATASETS = {
     "food-101"       : datasets.Food101,
     "speech_commands": datasets.SpeechCommandsDataset
@@ -289,6 +284,7 @@ def main():
                         dest="output_dir",
                         help="output directory")
     parser.add_argument("--dataset", default="food-101", type=str, dest="dataset", help="training dataset")
+    parser.add_argument("--dataset-dir", required=True, type=str, dest="dataset_dir", help="training dataset directory")
     parser.add_argument("-m", "--model", required=True, dest="model", type=str, help="train model name")
     parser.add_argument('--weights', type=float, nargs='+', default=[], help="loss weight of sub-networks")
     parser.add_argument("--pretrained", dest="pretrained", action="store_true",
@@ -338,9 +334,9 @@ def main():
     train_transform = get_preprocessor(args.input_type, "train")
     test_transform = get_preprocessor(args.input_type, "test")
 
-    train_dataset = DATASETS[args.dataset](DATASET_DIRS[args.dataset], transform=train_transform, mode="train")
-    valid_dataset = DATASETS[args.dataset](DATASET_DIRS[args.dataset], transform=test_transform, mode="valid")
-    test_dataset = DATASETS[args.dataset](DATASET_DIRS[args.dataset], transform=test_transform, mode="test")
+    train_dataset = DATASETS[args.dataset](args.dataset_dir, transform=train_transform, mode="train")
+    valid_dataset = DATASETS[args.dataset](args.dataset_dir, transform=test_transform, mode="valid")
+    test_dataset = DATASETS[args.dataset](args.dataset_dir, transform=test_transform, mode="test")
 
     train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=args.batch_size, shuffle=True)
     valid_loader = torch.utils.data.DataLoader(valid_dataset, batch_size=args.batch_size)
