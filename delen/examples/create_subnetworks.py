@@ -39,11 +39,11 @@ def main() -> None:
     weights = torch.load(weight_path, map_location=torch.device('cpu'))
 
     # Model trained with nn.DataParallel has weights begin with `module.`
-    fixed_weights = OrderedDict()
-    for name, weight in weights.items():
-        fixed_weights[name[7:]] = weight
+    # fixed_weights = OrderedDict()
+    # for name, weight in weights.items():
+    #     fixed_weights[name[7:]] = weight
 
-    model.load_state_dict(fixed_weights)
+    model.load_state_dict(weights)
     model = model.eval()
 
     if args.granularity == "exit":
