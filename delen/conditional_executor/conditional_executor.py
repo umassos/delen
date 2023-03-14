@@ -149,9 +149,9 @@ class ConditionalExecutor(object):
             confidence = np.max(prob)
 
             task.status.response_time = time.time() - task.start_t
-            task.status.accuracy = self._profile["accuracy"]
-            task.status.energy = self._profile["energy"]
-            task.status.computation = self._profile["flops"]
+            task.status.accuracy = self._profile[i]["accuracy"]
+            task.status.energy = self._profile[i]["energy"]
+            task.status.computation = self._profile[i]["flops"]
             task.status.confidence = confidence
             task.status.exit = i
 
