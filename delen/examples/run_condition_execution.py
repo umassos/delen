@@ -22,7 +22,7 @@ def main():
 
     logging.basicConfig(format="[%(levelname)s] %(funcName)s %(message)s")
 
-    model_name = os.path.basename(args.model_dir)
+    model_name = os.path.dirname(os.path.basename(args.model_dir))
     engine_dir = os.path.join(args.model_dir, "trt")
     profile_file = os.path.join(args.model_dir, f"{model_name}_profile.json")
 
