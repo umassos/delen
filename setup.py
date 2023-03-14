@@ -9,7 +9,7 @@ with open("README.md", 'r') as f:
 setup(
     name='delen',
     version=version.version,
-    packages=['delen', 'delen.utils', 'delen.models'],
+    packages=['delen', 'delen.utils', 'delen.models', 'delen.conditional_executor'],
     url='https://github.com/umassos/delen',
     license='MIT License',
     author='Qianlin Liang',
