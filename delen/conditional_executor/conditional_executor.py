@@ -59,8 +59,8 @@ class Task:
     outputs: np.ndarray = None
     start_t: float = 0
     end_t: float = 0
-    status: Status = None
-    state: TaskState = Status()
+    status: Status = Status()
+    state: TaskState = TaskState.INIT
 
 
 class ConditionBase(ABC):
