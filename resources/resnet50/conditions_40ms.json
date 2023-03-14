@@ -1,0 +1,1 @@
+[{"metric": "accuracy", "op": "less", "threshold": 0.04}, {"metric": "accuracy", "op": "less", "threshold": 0.04}, {"metric": "accuracy", "op": "less", "threshold": 0.04}, {"metric": "accuracy", "op": "less", "threshold": 0.04}]
