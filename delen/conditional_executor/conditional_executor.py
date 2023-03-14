@@ -56,11 +56,11 @@ class Status:
 @dataclass
 class Task:
     inputs: np.ndarray
-    outputs: np.ndarray
-    start_t: float
-    end_t: float
-    status: Status
-    state: TaskState
+    outputs: np.ndarray = None
+    start_t: float = 0
+    end_t: float = 0
+    status: Status = None
+    state: TaskState = None
 
 
 class ConditionBase(ABC):
