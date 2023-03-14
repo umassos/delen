@@ -23,6 +23,11 @@ def main():
 
     logging.basicConfig(format="[%(levelname)s] %(funcName)s %(message)s")
 
+    # Initialize CUDA context
+    cuda.init()
+    device = cuda.Device(0)
+    ctx = device.make_context()
+
     model_name = os.path.basename(os.path.dirname(args.model_dir))
     engine_dir = os.path.join(args.model_dir, "trt")
     profile_file = os.path.join(args.model_dir, f"{model_name}_profile.json")
@@ -46,6 +51,9 @@ def main():
             executor.execute(task)
 
             logger.info(f"task {task.state}, response time: {task.status.response_time*1000:.2f}")
+
+    ctx.pop()
+    ctx.detach()
 
 
 if __name__ == '__main__':
