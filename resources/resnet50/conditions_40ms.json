@@ -1,1 +1,1 @@
-[{"metric": "response_time", "op": "less", "threshold": 0.04}, {"metric": "response_time", "op": "less", "threshold": 0.04}, {"metric": "response_time", "op": "less", "threshold": 0.04}, {"metric": "response_time", "op": "less", "threshold": 0.04}]
+[{"metric": "response_time", "op": "greater", "threshold": 0.04}, {"metric": "response_time", "op": "greater", "threshold": 0.04}, {"metric": "response_time", "op": "greater", "threshold": 0.04}, {"metric": "response_time", "op": "greater", "threshold": 0.04}]
