@@ -5,6 +5,7 @@ import time
 import os
 import numpy as np
 import argparse
+import pycuda.driver as cuda
 
 from delen import conditional_executor
 from glob import glob
