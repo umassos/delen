@@ -60,7 +60,7 @@ class Task:
     start_t: float = 0
     end_t: float = 0
     status: Status = None
-    state: TaskState = None
+    state: TaskState = Status()
 
 
 class ConditionBase(ABC):
