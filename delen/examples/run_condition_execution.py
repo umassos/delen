@@ -50,7 +50,8 @@ def main():
             task = conditional_executor.Task(inputs=inputs)
             executor.execute(task)
 
-            logger.info(f"task {task.state}, response time: {task.status.response_time*1000:.2f}")
+            logger.info(f"task {task.state}, response time: {task.status.response_time*1000:.2f}, "
+                        f"exit#: {task.status.exit}")
 
     ctx.pop()
     ctx.detach()
