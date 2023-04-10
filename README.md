@@ -17,7 +17,7 @@ In particular, unlike cloud model serving systems, Dělen implements model servi
 
 ```
 @inproceedings{iotdi2023delen,
-    author = {Qianlin Liang and Walid A. Hanafy and Ahmed Ali-Eldin and David Irwin  and Prashant Shenoy},
+    author = {Qianlin Liang and Walid A. Hanafy and Noman Bashir and Ahmed Ali-Eldin and David Irwin  and Prashant Shenoy},
     title = {Dělen: Enabling Flexible and Adaptive Model-serving for Multi-tenant Edge AI},
     month = 5,
     year = 2023,
